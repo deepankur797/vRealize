@@ -1,0 +1,28 @@
+#param($server,[int]$counter)
+$server="10.1.23.246"
+
+$username = ".\Administrator"
+$password = "Admin098!"
+$SecPassword = ConvertTo-SecureString –string $password –AsPlaintext –Force
+$Cred = New-Object System.Management.Automation.PSCredential ($username,$SecPassword) ## creates credentials object to run a particular user account
+#$server="10.1.23.249";
+#$argList =@{
+#$New1 = "Rohan"
+#$new2 = "Deepankur"
+#}
+
+
+$New1 = "Rohan"
+$new2 = "Deepankur"
+Invoke-Command -ComputerName $server -Credential $Cred –ScriptBlock{
+# Put script here, which is to be run on third server
+netdom $new1
+echo $args[0]
+echo $args[1]
+
+ 
+#param($argList)
+#$argList | Out-File -FilePath 'E:\File2'
+#Add-Content -Value $Using:hostname -Path "E:File"
+
+} -ArgumentList ($New1,$new2) ; 
