@@ -1,11 +1,11 @@
 #param($server,[int]$counter)
-$server="10.1.23.246"
+$server="10.1.23.xxx"
 
 $username = ".\Administrator"
-$password = "Admin098!"
+$password = "A____!"
 $SecPassword = ConvertTo-SecureString –string $password –AsPlaintext –Force
 $Cred = New-Object System.Management.Automation.PSCredential ($username,$SecPassword) ## creates credentials object to run a particular user account
-#$server="10.1.23.249";
+#$server="10.1.23.xxx9";
 #$argList =@{
 #$New1 = "Rohan"
 #$new2 = "Deepankur"
